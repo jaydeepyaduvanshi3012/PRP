@@ -22,7 +22,7 @@ app.put("/save", async (req,res)=>{
         user.name = name;
         user.marks = marks;
         user = await user.save();
-        res.status(200).send({data: user});
+        res.status(200).send({data: user, msg: "saved"});
     } catch(err) {
         console.log(err);
         res.status(500).send("Some Error");
